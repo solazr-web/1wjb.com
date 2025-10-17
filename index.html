@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="1wjb site" />
+    <meta property="og:title" content="1wjb" />
+    <meta property="og:description" content="1wjb" />
+    <meta property="og:url" content="https://1wjb.com" />
+    <meta property="og:image" content="pfp.jpg" />
+    <title>1wjb.com</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/jpeg" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main>
+        <div style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                ">
+            <h1>1wjb.com</h1>
+            <p id="time">it appears javascript is not enabled</p>
+        </div>
+        <h2 id="about">about</h2>
+        <p>i know js, py, html, little java,</p>
+        <p>
+            i play games. my favorites are, in no specific order<br>
+            hotline miami, ace combat,
+            <br />
+            oneshot, minecraft
+        </p>
+        <fieldset id="contact">
+            <legend>contact info</legend>
+            <table>
+                <tr>
+                    <td>email</td>
+                    <td>1wjb [AT] 1wjb [DOT] com</td>
+                </tr>
+                <tr>
+                    <td>discord</td>
+                    <td>
+                        <a href="https://discord.com/users/1175535607515189340">solazr</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>steam</td>
+                    <td>
+                        <a href="https://steamcommunity.com/id/solazr/">/id/solazr</a>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br />
+        <fieldset id="specs">
+            <legend>specs</legend>
+            <ul>
+                <li>
+                    <details>
+                        <summary>server</summary>
+                        <table>
+                            <tr>
+                                <td>model</td>
+                                <td>Dell Inspiron 7737</td>
+                            </tr>
+                            <tr>
+                                <td>cpu</td>
+                                <td>4x Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz</td>
+                            </tr>
+                            <tr>
+                                <td>ram</td>
+                                <td>8 GB DDR3L</td>
+                            </tr>
+                            <tr>
+                                <td>disk</td>
+                                <td>1 TB SATA HDD</td>
+                            </tr>
+                            <tr>
+                                <td>fs</td>
+                                <td>btrfs</td>
+                            </tr>
+                            <tr>
+                                <td>os</td>
+                                <td>debian 12</td>
+                            </tr>
+                        </table>
+                    </details>
+                </li>
+            </ul>
+        </fieldset>
+        <br />
+        <fieldset id="links">
+            <legend>table of links</legend>
+            <ul>
+                <li>
+                    <p>no links yet, soz</p>
+                </li>
+            </ul>
+        </fieldset>
+        <br />
+
+        <div class="buttons" id="btns">
+            <img src="gifs/desktop.gif" />
+            <a href="https://debian.org/"><img src="gifs/debian.gif" alt="Powered by debian" title="i use debian btw" /></a>
+            <a href="https://ublockorigin.com/"><img src="gifs/ublockorigin.png" alt="uBlock Origin NOW!" /></a>
+            <iframe src="//incr.easrng.net/badge?key=1wjb.com" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+        </div>
+    </main>
+
+ 
+    
+    <script>
+        function updateClock() {
+            const options = {
+                timeZone: "America/Chicago",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+            };
+
+            const now = new Date();
+            const formatter = new Intl.DateTimeFormat("en-US", options);
+            const timeString = formatter.format(now);
+
+            document.getElementById("time").textContent =
+                `${timeString} in Texas`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+
+</html>
