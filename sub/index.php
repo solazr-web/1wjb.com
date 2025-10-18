@@ -71,7 +71,7 @@ if (empty($dirs)) {
 </div>
 
 <footer>
-	<p>updated <time datetime="<?= date('Y-m-d') ?>"><?= date('Y.m.d') ?></time></p>
+	<p>it is currently <time datetime="<?= date('Y-m-d') ?>"><?= date('Y.m.d') ?></time></p>
 </footer>
 
 </body>
