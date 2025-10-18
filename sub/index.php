@@ -61,7 +61,7 @@
 $dirs = array_filter(glob('*'), 'is_dir');
 
 if (empty($dirs)) {
-	echo '<p class="empty">there\'s nothing here right now, sorry</p>';
+	echo '<p class="empty">there\'s nothing here right now, sorry</p><br><br><br><br><br>';
 } else {
 	foreach ($dirs as $dir) {
 		echo '<a class="link" href="' . htmlspecialchars($dir) . '">' . htmlspecialchars($dir) . '</a>';
