@@ -1,169 +1,47 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="1wjb site" />
-    <meta property="og:title" content="1wjb" />
-    <meta property="og:description" content="1wjb" />
-    <meta property="og:url" content="https://1wjb.com" />
-    <meta property="og:image" content="pfp.jpg" />
-    <title>1wjb.com</title>
-    <link rel="shortcut icon" href="pfp.jpg" type="image/jpg" />
-    <link rel="stylesheet" href="style.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>★</title>
+	<link rel="stylesheet" href="blanket.css">
+	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <main>
-        <div style="
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                ">
-            <h1>★</h1>
-            <p id="time">it appears javascript is not enabled</p>
-        </div>
-        <h2 id="about">about</h2>
-        <p>i know js, py, html, little java,</p>
-        <p>
-            i play games. my favorites are, in no specific order;<br>
-            hotline miami, ace combat,
-            <br />
-            oneshot, minecraft
-        </p>
-        <fieldset id="contact">
-            <legend>contact info</legend>
-            <table>
-                <tr>
-                    <td>email</td>
-                    <td>1wjb [AT] 1wjb [DOT] com</td>
-                </tr>
-                <tr>
-                    <td>discord</td>
-                    <td>
-                        <a href="https://discord.com/users/1175535607515189340">solazr</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>steam</td>
-                    <td>
-                        <a href="https://steamcommunity.com/id/solazr/">/id/solazr</a>
-                    </td>
-                </tr>
-            </table>
-        </fieldset>
-        <br />
-        <fieldset id="specs">
-            <legend>specs</legend>
-            <ul>
-                <li>
-                    <details>
-                        <summary>laptop</summary>
-                        <table>
-                            <tr>
-                                <td>model</td>
-                                <td>Dell Inspiron 7773</td>
-                            </tr>
-                            <tr>
-                                <td>cpu</td>
-                                <td>8x Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz</td>
-                            </tr>
-                            <tr>
-                                <td>ram</td>
-                                <td>32 GB DDR4</td>
-                            </tr>
-                            <tr>
-                                <td>[sata] disk 0</td>
-                                <td>empty</td>
-                            </tr>
-                            <tr>
-                                <td>[sata] disk 1</td>
-                                <td>1 TB Crucial SSD</td>
-                            </tr>
-                            <tr>
-                                <td>[nvme] disk 2</td>
-                                <td>2 TB ADATA M.2</td>
-                            </tr>
-                            <tr>
-                                <td>fs</td>
-                                <td>NTFS</td>
-                            </tr>
-                            <tr>
-                                <td>os</td>
-                                <td>windows 11</td>
-                            </tr>
-                        </table>
-                    </details>
-                </li>
-                <li>
-                    <details>
-                        <summary>server</summary>
-                        <table>
-                            <tr>
-                                <td>model</td>
-                                <td>Dell Inspiron 7737</td>
-                            </tr>
-                            <tr>
-                                <td>cpu</td>
-                                <td>4x Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz</td>
-                            </tr>
-                            <tr>
-                                <td>ram</td>
-                                <td>8 GB DDR3L</td>
-                            </tr>
-                            <tr>
-                                <td>[sata] disk</td>
-                                <td>1 TB HDD</td>
-                            </tr>
-                            <tr>
-                                <td>fs</td>
-                                <td>btrfs</td>
-                            </tr>
-                            <tr>
-                                <td>os</td>
-                                <td>debian 12</td>
-                            </tr>
-                        </table>
-                    </details>
-                </li>
-            </ul>
-        </fieldset>
-        <br />
-        <fieldset id="links">
-            <legend>table of links</legend>
-            <ul>
-                <li>
-                    <p>no links yet, soz</p>
-                </li>
-            </ul>
-        </fieldset>
-        <br />
-    </main>
 
- 
-    
-    <script>
-        function updateClock() {
-            const options = {
-                timeZone: "America/Chicago",
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: true,
-            };
+<h1>1wjb</h1>
 
-            const now = new Date();
-            const formatter = new Intl.DateTimeFormat("en-US", options);
-            const timeString = formatter.format(now);
+<nav id="nav">
+	<ul>
+		<li><a href="sub/">the randoms</a></li>
+	</ul>
+</nav>
 
-            document.getElementById("time").textContent =
-                `${timeString} in Texas`;
-        }
+<p>hello?<br><br><br><br><br><br></p>
 
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
+<div id="updates-goals-wrapper">
+
+	<section id="updates">
+		<h2>updates</h2>
+		<h3><time datetime="2025-10-18">2025.10.18</time></h3>
+		<ul>
+			<li>redesign for the 5th time</li>
+		</ul>
+	</section>
+
+	<section id="goals">
+		<h2>goals</h2>
+		<ul>
+			<li>lock in</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+		</ul>
+	</section>
+
+</div>
+
 </body>
-
 </html>

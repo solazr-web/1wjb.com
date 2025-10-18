@@ -1,0 +1,205 @@
+@font-face {font-family: mspgothic; src: local("MS PGothic"), url(assets/fonts/mspgothic.ttf)}
+
+:root {
+	--white: hsl(0, 0%, 95%);
+	--black: hsl(0, 0%, 15%);
+}
+
+body {
+	margin: unset;
+
+	&::after {
+		content: "";
+		background-image: url(assets/noise.png);
+		opacity: 0.04;
+		position: fixed;
+		inset: 0;
+		image-rendering: auto;
+		pointer-events: none;
+		z-index: 99;
+	}
+}
+
+/* heading */
+
+h1, h2, h3, h4, h5, h6 {
+	margin-block: unset;
+}
+
+hgroup p {
+	margin-block: unset;
+}
+
+hr {
+	color: unset;
+	border: unset;
+}
+
+/* inline */
+
+a {
+	color: unset;
+	text-decoration: unset;
+}
+
+/* block */
+
+blockquote {
+	margin-inline: unset
+}
+
+summary {
+	user-select: none;
+	cursor: pointer;
+}
+
+dd {
+	margin-left: unset;
+}
+
+/* embed */
+
+img, audio, video, iframe {
+	display: block;
+}
+
+iframe {
+	border: unset;
+}
+
+/* input */
+
+button, select, input {
+	appearance: none;
+	border: unset;
+}
+
+button, select, input {
+	color: unset;
+	font: unset;
+	background-color: unset;
+	padding: unset;
+}
+
+button, select {
+	cursor: pointer;
+}
+
+button {
+	text-align: unset;
+}
+
+input {
+	outline: unset;
+}
+
+/* tape deck */
+
+tape-deck {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+
+	button {
+		max-width: max-content;
+	}
+
+	select {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		contain: inline-size;
+		overflow: hidden;
+		flex: 1;
+	}
+}
+
+/* trail */
+
+#trail {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-content: start;
+	column-gap: 0.25em;
+	font-family: serif;
+	font-style: italic;
+	margin-top: 2em;
+
+	&::before {
+		content: "your fingers catch upon a";
+		grid-column: 1;
+		grid-row: 1 / span 99;
+	}
+
+	&::after {
+		content: "...";
+		grid-column: 3;
+		grid-row: 1 / span 99;
+	}
+
+	a {
+		color: blue;
+		text-decoration: underline;
+	}
+}
+
+/*
+
+rule order
+
+display
+-------
+display
+[grid|flex]-*
+[justify|align]-[items|content]
+gap
+columns
+
+content
+-------
+content (except in pseudoelements, where it comes first)
+color
+font
+letter-spacing
+text-*
+writing-mode
+object-*
+
+box
+---
+background
+width
+height
+aspect-ratio
+box-sizing
+padding
+border
+box-shadow
+margin
+overflow
+
+transform
+---------
+translate
+scale
+rotate
+transform
+filter
+
+position
+--------
+[justify|align]-self
+grid-[column|row|area]
+position
+inset
+
+rendering
+---------
+contain
+image-rendering
+
+input
+-----
+pointer-events
+user-select
+
+*/

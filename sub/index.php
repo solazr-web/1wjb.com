@@ -1,123 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ClassLink</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>random ★</title>
+	<link rel="stylesheet" href="../blanket.css">
+	<link rel="stylesheet" href="../style.css">
+	<style>
+		body {
+			max-width: 400px;
+			margin-top: 320px;
+			font-family: mspgothic, monospace;
+			color: #68293f;
+		}
 
-        h1 {
-            margin-top: 50px;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 24px;
-            letter-spacing: 1px;
-            white-space: pre;
-        }
+		h1 {
+			font-family: serif;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 1.5em;
+			margin-bottom: 0.75em;
+		}
 
-        .container {
-            margin-top: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
+		.container {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5em;
+		}
 
-        a.button {
-            background-color: #444;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border: 2px solid #666;
-            border-radius: 8px;
-            transition: background-color 0.3s, border-color 0.3s;
-            cursor: pointer;
-        }
+		a.link {
+			display: inline-block;
+			text-decoration: underline;
+			color: color-mix(in srgb, currentcolor, #45d1a1);
+			transition: color 0.2s ease, transform 0.2s ease;
+		}
 
-        a.button:hover {
-            background-color: #666;
-            border-color: #888;
-        }
+		a.link:hover {
+			color: color-mix(in srgb, currentcolor, #1f9e7c);
+			transform: translateX(2px);
+		}
 
-        #cursor {
-            display: inline-block;
-            opacity: 1;
-        }
+		.empty {
+			font-style: italic;
+			color: color-mix(in srgb, currentcolor, #aaa);
+		}
 
-        @keyframes blink {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-    </style>
+		footer {
+			margin-top: 1.5em;
+			font-size: 0.875em;
+			color: color-mix(in srgb, currentcolor, #888);
+		}
+	</style>
 </head>
 <body>
-    <h1><span id="typed-text"></span><span id="cursor">█</span></h1>
 
-    <div class="container">
-        <?php
-        $dirs = array_filter(glob('*'), 'is_dir');
+<h1>randoms</h1>
 
-        if (empty($dirs)) {
-            echo "<h3>[-- SECTOR EMPTY --]</h3>";
-        } else {
-            foreach ($dirs as $dir) {
-                echo '<a class="button" data-href="' . htmlspecialchars($dir) . '">' . htmlspecialchars($dir) . '</a>';
-            }
-        }
-        ?>
-    </div>
+<div class="container">
+<?php
+$dirs = array_filter(glob('*'), 'is_dir');
 
-    <script>
-        const message = "hi";
-        const textSpan = document.getElementById("typed-text");
-        const cursor = document.getElementById("cursor");
-        let i = 0;
+if (empty($dirs)) {
+	echo '<p class="empty">there\'s nothing here right now, sorry</p>';
+} else {
+	foreach ($dirs as $dir) {
+		echo '<a class="link" href="' . htmlspecialchars($dir) . '">' . htmlspecialchars($dir) . '</a>';
+	}
+}
+?>
+</div>
 
-        function type() {
-            if (i < message.length) {
-                textSpan.textContent += message.charAt(i);
-                i++;
-                setTimeout(type, 75);
-            } else {
-                cursor.style.animation = "blink 0.5s step-end infinite";
-                setTimeout(() => {
-                    cursor.style.display = "none";
-                }, 2000);
-            }
-        }
+<footer>
+	<p>updated <time datetime="<?= date('Y-m-d') ?>"><?= date('Y.m.d') ?></time></p>
+</footer>
 
-        window.addEventListener("load", type);
-
-        const buttons = document.querySelectorAll(".button");
-        buttons.forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-
-                const destination = btn.getAttribute("data-href");
-                let dotState = 0;
-                let dotInterval;
-                let duration = Math.random() * 2 + 2;
-
-                cursor.style.display = "none";
-                textSpan.textContent = "transferring";
-
-                dotInterval = setInterval(() => {
-                    dotState = (dotState + 1) % 4;
-                    textSpan.textContent = "transferring" + ".".repeat(dotState);
-                }, 200);
-
-                setTimeout(() => {
-                    clearInterval(dotInterval);
-                    window.location.href = destination;
-                }, duration * 100);
-            });
-        });
-    </script>
 </body>
 </html>
